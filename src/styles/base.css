@@ -1,0 +1,45 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-family: 'Dosis';
+  font-size: 62.5%;
+  font-weight: 300;
+  user-select: none;
+}
+
+body {
+  background: var(--color-black);
+  -webkit-app-region: drag;
+  overflow-x: hidden;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+[role="button"], button {
+  -webkit-app-region: no-drag;
+  color: #F4F9E9;
+  /*carpet*/
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, strong, i {
+  -webkit-app-region: drag;
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 75%;
+  }
+}
+@media (max-width: 576px) {
+  html {
+    font-size: 56.25%;
+  }
+}

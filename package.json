@@ -1,0 +1,67 @@
+{
+  "homepage": "./",
+  "name": "WaveMP",
+  "productName": "WaveMP",
+  "description": "Music Player made with react and electron",
+  "version": "0.1.0",
+  "private": true,
+  "postinstall": "electron-builder install-app-deps",
+  "main": "src/electron",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "classnames": "^2.2.5",
+    "concurrently": "^3.5.1",
+    "electron-is-dev": "^0.3.0",
+    "gsap": "^2.0.1",
+    "jsmediatags": "^3.8.1",
+    "mobx": "^4.2.1",
+    "mobx-react": "^5.1.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4",
+    "readdir-absolute": "^1.0.1"
+  },
+  "scripts": {
+    "rs-start": "react-scripts start",
+    "start": "concurrently \"yarn rs-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "package-app": "electron-builder -m -w --linux deb",
+    "package-app-32": "electron-builder --win --linux deb --ia32"
+  },
+  "devDependencies": {
+    "electron": "^2.0.0",
+    "electron-builder": "^20.15.1",
+    "wait-on": "^2.1.0"
+  },
+  "author": {
+    "name": "Jesús Acuña",
+    "email": "manuelmaciel7001@hotmail.com"
+  },
+  "build": {
+    "appId": "com.electron.musicplayer",
+    "mac": {
+      "category": "Music",
+      "icon": "./src/assets/icons/mac/icon.icns"
+    },
+    "dmg": {
+      "background": "./src/assets/installer background/background.png"
+    },
+    "win": {
+      "icon": "./src/assets/icons/win/icon.ico"
+    },
+    "linux": {
+      "icon": "./src/assets/icons/png"
+    },
+    "files": [
+      "build/**/*",
+      "src/electron/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "extends": null
+  }
+}
